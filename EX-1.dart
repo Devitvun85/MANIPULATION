@@ -1,14 +1,20 @@
 enum Skill { FLUTTER, DART, OTHER }
 
 class Employee {
-  String name;
-  double baseSalary;
+   String _name;
+  double _baseSalary;
   
-  int yearsOfExperience;
-  Address address;
-  List<Skill> skills = [];
+  int _yearsOfExperience;
+  Address _address;
+  List<Skill> _skills = [];
 
-  Employee(this.name, this.baseSalary,this.yearsOfExperience,this.address, this.skills);
+  String get name => _name;
+  double get baseSalary => _baseSalary;
+  int get yearsOfExperience => _yearsOfExperience;
+  Address get address => _address;
+  List<Skill> get skills => _skills;
+
+  Employee(this._name, this._baseSalary,this._yearsOfExperience,this._address, this._skills);
 
   void printDetails() {
     print('Employee: $name, Base Salary: \$${baseSalary}');
