@@ -1,31 +1,31 @@
 enum Skill { FLUTTER, DART, OTHER }
 
 class Employee {
-  final String _name;
-  final double _baseSalary;
+  final String name;
+  final double baseSalary;
 
-  final int _yearsOfExperience;
-  final Address _address;
-  List<Skill> _skills = [];
+  final int yearsOfExperience;
+  final Address address;
+  List<Skill> skills = [];
 
   Employee(
-    this._name,
-    this._baseSalary,
-    this._yearsOfExperience,
-    this._address,
-    this._skills,
+    this.name,
+    this.baseSalary,
+    this.yearsOfExperience,
+    this.address,
+    this.skills,
   );
     
-  String get name => _name;
-  double get baseSalary => _baseSalary;
-  int get yearsOfExperience => _yearsOfExperience;
-  Address get address => _address;
-  List<Skill> get skills => _skills;
+  String get nameE => name;
+  double get baseSalarys => baseSalary;
+  int get yearsOfExperiences => yearsOfExperience;
+  Address get addressE => address;
+  List<Skill> get skillsE => skills;
 
   double calculateSalary() {
-    double salary = _baseSalary+(_yearsOfExperience * 2000);
+    double salary = baseSalary+(yearsOfExperience * 2000);
 
-    for (final skill in _skills) {
+    for (final skill in skills) {
       if (skill == Skill.FLUTTER) {
         salary += 5000;
       } else if (skill == Skill.DART) {
@@ -38,7 +38,7 @@ class Employee {
   }
 
   void printDetails() {
-    print('Employee: $_name, Base Salary: \$${_baseSalary}, Years of Experience: $_yearsOfExperience, Address: ${_address.street}, ${_address.city}, ${_address.zipCode}, Skills: ${_skills.join(",")}, Calculated Salary: \$${calculateSalary()}');
+    print('Employee: $name, Base Salary: \$${baseSalary}, Years of Experience: $yearsOfExperience, Address: ${address.street}, ${address.city}, ${address.zipCode}, Skills: ${skills.join(",")}, Calculated Salary: \$${calculateSalary()}');
   }
 }
 class Address {
